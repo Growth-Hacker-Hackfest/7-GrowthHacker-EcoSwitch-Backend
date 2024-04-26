@@ -1,0 +1,10 @@
+@TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IiIsImlhdCI6MTcxNDE1ODMyMiwiZXhwIjoxNzE0MjQ0NzIyfQ.xEWT31tLwvm-NT1aEoGZ3NtEZXVDWzrFN_5mROiagEE
+@BASE_URL=http://localhost:3000
+
+
+### Get all ruangan
+GET {{BASE_URL}}/ruangan
+Authorization: Bearer {{TOKEN}}
+Accept: application/json
+
+

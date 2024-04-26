@@ -11,6 +11,7 @@ Lorem ipsum
 ## Docs
 1. [Auth API](#auth-api)
 2. [Banner API](#banner-api)
+3. [Ruangan](#ruangan)
 
 ### Base Environment
 
@@ -87,6 +88,8 @@ Accept: application/json
 ```
 
 Response after successfully get all banners.
+
+Status Code: `200 OK`
 ```json
 {
   "message": "Banners retrieved",
@@ -102,6 +105,148 @@ Response after successfully get all banners.
     {
       "id": "66e267ae-0955-455c-a567-9ca9f5013528",
       "link": "https://is3.cloudhost.id/storage-foto/ciputra-banner/Item1.png"
+    }
+  ]
+}
+```
+
+### Ruangan
+
+This ruangan API is used to get all ruangan.
+
+#### Get All Ruangan Request
+
+Request to get all ruangan.
+```http
+GET {{BASE_URL}}/ruangan
+Accept: application/json
+```
+
+Response after successfully get all ruangan.
+
+Status Code: `200 OK`
+```json
+{
+  "message": "Ruangans retrieved",
+  "data": [
+    {
+      "id": "14008517-e6da-4211-beb0-8d058af0bcd7",
+      "name": "Ruang Tamu",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "36e81977-8775-4e2a-bb30-04969ee7b7be",
+      "name": "Kolam Renang",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "5a83db6e-fbbf-4622-9676-187fc1187c47",
+      "name": "Ruang Mandi",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "5aa84164-9e2d-404f-b685-b57e042c883c",
+      "name": "Garasi",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "6adb5370-4824-4877-87f1-e742114ebc4e",
+      "name": "Ruang Parkir",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "6b574201-fae1-4b2a-ade3-e33ce840f147",
+      "name": "Ruang Keluarga",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "6bf79242-41ce-4247-8c4a-c239e9a3c9d8",
+      "name": "Gudang",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "7ffeb9c9-33fd-4323-b735-4af562ab727d",
+      "name": "Ruang Jemur",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "838a6553-b6a7-4d39-8462-5606406870c6",
+      "name": "Ruang Kerja",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "94d76e4b-f6d8-4dc7-8451-e35ddd518486",
+      "name": "Ruang Tidur",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "a79e8c64-a4a8-4cd2-81d1-5f916df8f935",
+      "name": "Ruang Dapur",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "bf6dae4f-1584-4f9e-9ae2-4a55b0c1e00b",
+      "name": "Ruang Fitness",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "c39f8f73-dcbb-4d9a-a8b2-70d0f9a0e5e9",
+      "name": "Taman",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "c66ec70d-4ce7-4c2c-b529-f371c19e62a9",
+      "name": "Ruang Musik",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "e494df55-c26b-4dc9-91d5-2ce7c31af1c3",
+      "name": "Ruang Belajar",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "eb87c9dd-06c7-4388-9237-69c669975379",
+      "name": "Ruang Makan",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
+    },
+    {
+      "id": "eccfe996-8a0f-452e-b7f5-d265769acb36",
+      "name": "Ruang Cuci",
+      "user_id": null,
+      "created_at": "2024-04-26T17:40:31.000Z",
+      "updated_at": "2024-04-26T17:40:31.000Z"
     }
   ]
 }
