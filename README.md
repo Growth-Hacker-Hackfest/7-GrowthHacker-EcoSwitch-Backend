@@ -48,5 +48,27 @@ Status code: `201 Created`
 }
 ```
 
+#### Login Request
 
+Body request to login user.
+```http
+### Login user
+POST {{BASE_URL}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "adityarizky1020@gmail.com",
+  "password": "password123"
+}
+```
+
+Response after successfully login user.
+
+Status code: `200 OK`
+```json
+{
+  "message": "Login success",
+  "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IiIsImlhdCI6MTcxNDE0NDUzNywiZXhwIjoxNzE0MjMwOTM3fQ.44YCK4aGhUyNO4HGZa1TxPrjXN3Sf4xGg3xvOON8mXQ"
+}
+```
 

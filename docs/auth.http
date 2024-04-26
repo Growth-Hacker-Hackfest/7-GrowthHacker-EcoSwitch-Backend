@@ -11,7 +11,11 @@ Content-Type: application/json
 }
 
 
-### Test Get home
-GET {{BASE_URL}}
+### Login as a user
+POST {{BASE_URL}}/auth/login
 Content-Type: application/json
 
+{
+  "email": "adityarizky1020@gmail.com",
+  "password": "password123"
+}
