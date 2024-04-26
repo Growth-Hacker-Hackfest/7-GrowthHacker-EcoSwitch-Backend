@@ -7,38 +7,42 @@ const jwt = require('jsonwebtoken')
 const library = {}
 module.exports = library
 
-library.register = async (username, password) => {
-  const hash = await bcrypt.hash(password, 10)
+library.register = async ({
+  body = {},
+  transaction = null
+}) => {
   const user = await User.create({
-    username,
-    password: hash,
-    role: 'admin'
+    ...body
+  }, {
+    transaction
   })
   return user
 }
 
-library.login = async (username, password) => {
+library.login = async ({
+  body
+}) => {
   const user = await User.findOne({
     where: {
-      username
+      email: body.email
     }
   })
   if (!user) {
     throw new Error('User not found')
   }
-  const isValid = await bcrypt.compare(password, user.password)
+  const isValid = await bcrypt.compare(body.password, user.password)
   if (!isValid) {
     throw new Error('Password is not valid')
   }
+  delete user.dataValues.password
   return user
 }
 
 library.generateToken = (user) => {
   const token = jwt.sign({
-    id: user.id,
-    role: user.role
+    id: user.id
   }, process.env.JWT_SECRET, {
-    expiresIn: '30d'
+    expiresIn: '1d'
   })
   return token
 }

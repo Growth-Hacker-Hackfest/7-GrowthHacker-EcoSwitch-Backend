@@ -1,0 +1,17 @@
+@BASE_URL=http://localhost:3000
+
+### Create a new user
+POST {{BASE_URL}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "adityarizky1020@gmail.com",
+  "password": "password123",
+  "complete_name": "Aditya Rizky"
+}
+
+
+### Test Get home
+GET {{BASE_URL}}
+Content-Type: application/json
+
