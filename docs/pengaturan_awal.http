@@ -1,0 +1,29 @@
+@TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA1MmFmYjYxLWUyMTktNGRkOS05YTlhLTFmMWQ3YTEyNDg1ZSIsImlhdCI6MTcxNDE3NDU2OCwiZXhwIjoxNzE0MjYwOTY4fQ.9u5TLo9dKpyJRZuTjHA4etzcf4DOjbXY1DrCyaW-2D4
+@BASE_URL=http://localhost:3000
+
+POST {{BASE_URL}}/informasi-listrik
+Authorization: Bearer {{TOKEN}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "daya": "contoh_daya",
+  "jenis_pembayaran": "contoh_jenis_pembayaran",
+  "perangkat_listrik": [
+    {
+      "jenis_perangkat": "contoh_jenis_perangkat_1",
+      "jenis_inverter": "contoh_jenis_inverter_1",
+      "jumlah": 2,
+      "daya_listrik": 100,
+      "lama_pemakaian": 5
+    },
+    {
+      "jenis_perangkat": "contoh_jenis_perangkat_2",
+      "jenis_inverter": "contoh_jenis_inverter_2",
+      "jumlah": 3,
+      "daya_listrik": 200,
+      "lama_pemakaian": 6
+    }
+  ]
+}
+

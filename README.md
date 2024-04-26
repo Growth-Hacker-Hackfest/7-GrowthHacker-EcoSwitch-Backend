@@ -12,6 +12,7 @@ Lorem ipsum
 1. [Auth API](#auth-api)
 2. [Banner API](#banner-api)
 3. [Ruangan](#ruangan)
+4. [Pengaturan Awal](#pengaturan-awal)
 
 ### Base Environment
 
@@ -251,3 +252,83 @@ Status Code: `200 OK`
   ]
 }
 ```
+
+### Pengaturan Awal
+
+To complete user data for daily electricity use
+
+#### Create pengaturan awal
+
+Request body
+
+```http
+POST {{BASE_URL}}/informasi-listrik
+Authorization: Bearer {{TOKEN}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "daya": "contoh_daya",
+  "jenis_pembayaran": "contoh_jenis_pembayaran",
+  "perangkat_listrik": [
+    {
+      "jenis_perangkat": "contoh_jenis_perangkat_1",
+      "jenis_inverter": "contoh_jenis_inverter_1",
+      "jumlah": 2,
+      "daya_listrik": 100,
+      "lama_pemakaian": 5
+    },
+    {
+      "jenis_perangkat": "contoh_jenis_perangkat_2",
+      "jenis_inverter": "contoh_jenis_inverter_2",
+      "jumlah": 3,
+      "daya_listrik": 200,
+      "lama_pemakaian": 6
+    }
+  ]
+}
+```
+
+Example Response
+
+Status Code: `201 Created`
+```json
+{
+  "message": "Informasi listrik created",
+  "data": {
+    "informasiListrik": {
+      "id": "0daa6f2e-4c31-4a9c-8f70-f316617549d3",
+      "daya": "contoh_daya",
+      "jenis_pembayaran": "contoh_jenis_pembayaran",
+      "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
+      "updated_at": "2024-04-26T23:38:14.804Z",
+      "created_at": "2024-04-26T23:38:14.804Z"
+    },
+    "perangkatListrik": [
+      {
+        "id": "e6020a03-66e3-483c-9923-d206ad34f836",
+        "jenis_perangkat": "contoh_jenis_perangkat_1",
+        "jenis_inverter": "contoh_jenis_inverter_1",
+        "jumlah": 2,
+        "daya_listrik": 100,
+        "lama_pemakaian": 5,
+        "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
+        "created_at": "2024-04-26T23:38:14.816Z",
+        "updated_at": "2024-04-26T23:38:14.816Z"
+      },
+      {
+        "id": "80c6563e-1ce6-4af9-9b68-2f517ed58665",
+        "jenis_perangkat": "contoh_jenis_perangkat_2",
+        "jenis_inverter": "contoh_jenis_inverter_2",
+        "jumlah": 3,
+        "daya_listrik": 200,
+        "lama_pemakaian": 6,
+        "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
+        "created_at": "2024-04-26T23:38:14.816Z",
+        "updated_at": "2024-04-26T23:38:14.816Z"
+      }
+    ]
+  }
+}
+```
+
