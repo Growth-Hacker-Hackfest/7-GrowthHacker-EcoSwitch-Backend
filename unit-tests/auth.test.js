@@ -25,6 +25,7 @@ describe("Test register user", () => {
       password: "password123",
       complete_name: "Aditya Rizky"
     }).set("Accept", "application/json");
+    console.log(response.body);
     expect(response.status).toBe(201);
   });
 });
@@ -48,6 +49,7 @@ describe("Test login user", () => {
       email: "adityarizky1020@gmail.com",
       password: "password123",
     }).set("Accept", "application/json");
+    console.log(response.body);
     expect(response.status).toBe(200);
   });
 });
