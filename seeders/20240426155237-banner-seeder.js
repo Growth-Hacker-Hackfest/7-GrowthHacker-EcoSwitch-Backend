@@ -30,7 +30,12 @@ module.exports = {
         "link": "https://is3.cloudhost.id/storage-foto/ciputra-banner/Item3.png"
       }
     ]
-    await Banner.bulkCreate(data)
+    for (const element of data) {
+      const isFind = await Banner.findOne({ where: { link: element.link } })
+      if (!isFind) {
+        await Banner.create(element)
+      }
+    }
   },
 
   async down(queryInterface, Sequelize) {
