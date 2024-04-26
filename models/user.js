@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    username: {
+    email: {
       type: DataTypes.STRING(255),
       allowNull: false
     },
@@ -13,17 +13,18 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TEXT,
       allowNull: false
     },
-    role: {
-      type: DataTypes.ENUM('admin', 'user'),
+    complete_name: {
+      type: DataTypes.STRING(255),
       allowNull: false
     },
   }, {
-    // Other model options go here
-    tableName: 'Users',
+    tableName: 'users',
     timestamps: true,
     freezeTableName: true,
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt',
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
+    deletedAt: 'deleted_at',
+    paranoid: true,
   });
   User.associate = function (models) {
     // associations can be defined here

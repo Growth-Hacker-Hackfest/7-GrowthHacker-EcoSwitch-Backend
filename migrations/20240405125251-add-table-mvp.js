@@ -18,7 +18,7 @@ module.exports = {
           allowNull: false,
           defaultValue: Sequelize.DataTypes.UUIDV4,
         },
-        name: {
+        complete_name: {
           type: Sequelize.DataTypes.STRING,
           allowNull: false,
         },
@@ -29,41 +29,6 @@ module.exports = {
         },
         password: {
           type: Sequelize.DataTypes.STRING,
-          allowNull: false,
-        },
-        created_at: {
-          type: Sequelize.DataTypes.DATE,
-          allowNull: false,
-          defaultValue: Sequelize.DataTypes.NOW,
-        },
-        updated_at: {
-          type: Sequelize.DataTypes.DATE,
-          allowNull: false,
-          defaultValue: Sequelize.DataTypes.NOW,
-        },
-        deleted_at: {
-          type: Sequelize.DataTypes.DATE,
-          allowNull: true,
-        },
-      }, { transaction });
-      // Nama table packages dengan kolom id [nanoid], name[string], price[decimal], feature[json], created_at[timestamp], updated_at[timestamp], deleted_at[timestamp]
-      await queryInterface.createTable('packages', {
-        id: {
-          type: Sequelize.DataTypes.STRING,
-          primaryKey: true,
-          allowNull: false,
-          defaultValue: Sequelize.DataTypes.UUIDV4,
-        },
-        name: {
-          type: Sequelize.DataTypes.STRING,
-          allowNull: false,
-        },
-        price: {
-          type: Sequelize.DataTypes.DECIMAL,
-          allowNull: false,
-        },
-        feature: {
-          type: Sequelize.DataTypes.JSON,
           allowNull: false,
         },
         created_at: {
@@ -93,7 +58,6 @@ module.exports = {
      */
     await queryInterface.sequelize.transaction(async (transaction) => {
       await queryInterface.dropTable('users', { transaction });
-      await queryInterface.dropTable('packages', { transaction });
     });
   }
 };
