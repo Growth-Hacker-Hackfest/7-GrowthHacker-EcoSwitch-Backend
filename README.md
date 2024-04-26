@@ -23,7 +23,7 @@ Base environment for this http request is `http://localhost:3000`. You can chang
 
 This auth API is used to register and login user. The user will get a token after successfully login and the token will be used to access other API.
 
-#### Login Request
+#### Register Request
 
 Body request to login user.
 ```http
