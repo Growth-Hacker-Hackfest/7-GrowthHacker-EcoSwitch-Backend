@@ -1,7 +1,7 @@
 const SECONDS = 1000;
 jest.setTimeout(90 * SECONDS);
 const supertest = require('supertest');
-const app = require('../../app');
+const app = require('../app');
 const request = supertest(app);
 const jwt = require('jsonwebtoken');
 
