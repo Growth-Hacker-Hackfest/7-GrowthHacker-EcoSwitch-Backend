@@ -72,3 +72,35 @@ Status code: `200 OK`
 }
 ```
 
+### Banner API
+
+This banner API is used to get all banners.
+
+#### Get All Banners Request
+
+Request to get all banners.
+```http
+GET {{BASE_URL}}/banner
+Accept: application/json
+```
+
+Response after successfully get all banners.
+```json
+{
+  "message": "Banners retrieved",
+  "data": [
+    {
+      "id": "2b73e2a4-e8ac-4712-b815-16904e350969",
+      "link": "https://is3.cloudhost.id/storage-foto/ciputra-banner/Item2.png"
+    },
+    {
+      "id": "38a2b92c-f1a6-40ea-baca-0eb779f07131",
+      "link": "https://is3.cloudhost.id/storage-foto/ciputra-banner/Item3.png"
+    },
+    {
+      "id": "66e267ae-0955-455c-a567-9ca9f5013528",
+      "link": "https://is3.cloudhost.id/storage-foto/ciputra-banner/Item1.png"
+    }
+  ]
+}
+```
