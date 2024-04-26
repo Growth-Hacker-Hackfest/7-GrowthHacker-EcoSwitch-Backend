@@ -22,7 +22,7 @@
     "start:local": "cross-env NODE_ENV=local nodemon ./bin/www",
     "start:staging": "cross-env NODE_ENV=staging node ./bin/www",
     "start:development": "cross-env DEBUG=authorization-service:* & cross-env NODE_ENV=development & nodemon ./bin/www",
-    "start:production": "cross-env NODE_ENV=production & node ./bin/www",
+    "start:production": "pm2 start ./bin/www",
     "start:test": "cross-env NODE_ENV=test nodemon ./bin/www"
   },
   "dependencies": {
