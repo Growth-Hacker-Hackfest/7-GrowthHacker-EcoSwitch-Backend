@@ -9,6 +9,8 @@ Lorem ipsum
 Lorem ipsum
 
 ## Docs
+1. Auth API([here](#auth-api)
+2. Banner API([here](#banner-api)
 
 ### Base Environment
 
