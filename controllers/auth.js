@@ -18,6 +18,7 @@ library.register = async (req, res, next) => {
       body: req.body,
       transaction: transaction.data
     })
+    await transactionUtil.Commit(transaction.data)
     const token = repoAuth.generateToken(user)
     return success(res, 201, token, 'User created')
   } catch (error) {
@@ -34,7 +35,7 @@ library.login = async (req, res, next) => {
       body: req.body
     })
     const token = repoAuth.generateToken(user)
-    return success(res, 200, { token }, 'Login success')
+    return success(res, 200, token, 'Login success')
   } catch (error) {
     next(error)
   }

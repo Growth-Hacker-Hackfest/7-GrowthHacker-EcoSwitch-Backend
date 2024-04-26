@@ -7,7 +7,8 @@ library.register = function () {
   return [
     body('email')
       .exists().withMessage('email is required')
-      .isEmail().withMessage('email is not valid'),
+      .isEmail().withMessage('email is not valid')
+      .isLength({ max: 255 }).withMessage('email must be at most 255 chars long'),
     body('password')
       .exists().withMessage('password is required')
       .isLength({ min: 8 }).withMessage('password must be at least 8 chars long')
@@ -21,11 +22,12 @@ library.register = function () {
 
 library.login = function () {
   return [
-    body('username')
-      .exists().withMessage('username is required')
-      .isLength({ min: 8 }).withMessage('username must be at least 8 chars long'),
+    body('email')
+      .exists().withMessage('email is required')
+      .isEmail().withMessage('email is not valid'),
     body('password')
       .exists().withMessage('password is required')
-      .isLength({ min: 8 }).withMessage('password must be at least 8 chars long'),
+      .isLength({ min: 8 }).withMessage('password must be at least 8 chars long')
+      .isLength({ max: 255 }).withMessage('password must be at most 255 chars long'),
   ]
 }

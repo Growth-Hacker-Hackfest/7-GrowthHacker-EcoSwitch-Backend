@@ -2,6 +2,7 @@ const {
   User
 } = require('../models')
 const bcrypt = require('bcrypt')
+const flaverr = require('flaverr')
 const jwt = require('jsonwebtoken')
 
 const library = {}
@@ -11,6 +12,7 @@ library.register = async ({
   body = {},
   transaction = null
 }) => {
+  body.password = await bcrypt.hash(body.password, 10)
   const user = await User.create({
     ...body
   }, {
@@ -28,11 +30,11 @@ library.login = async ({
     }
   })
   if (!user) {
-    throw new Error('User not found')
+    throw flaverr('E_NOT_FOUND', new Error('User not found'))
   }
   const isValid = await bcrypt.compare(body.password, user.password)
   if (!isValid) {
-    throw new Error('Password is not valid')
+    throw flaverr('E_BAD_REQUEST', new Error('Invalid password'))
   }
   delete user.dataValues.password
   return user
