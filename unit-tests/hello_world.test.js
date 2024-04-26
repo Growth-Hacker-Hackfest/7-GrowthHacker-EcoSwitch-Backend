@@ -16,7 +16,6 @@ const token = (is_admin = false) => {
 
 
 const headers = {
-  "x-brand": brand_id,
   "Authorization": 'Bearer ' + token(),
 }
 
