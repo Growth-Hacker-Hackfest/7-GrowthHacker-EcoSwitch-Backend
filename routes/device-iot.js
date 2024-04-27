@@ -8,7 +8,7 @@ router.get('/', deviceIotValidation.findAll(), validate, deviceIotController.fin
 router.get('/iot', validate, deviceIotController.findAllIoT);
 router.post('/', deviceIotValidation.create(), validate, deviceIotController.create);
 router.post('/iot', validate, deviceIotController.createIoT);
-router.get('/iot/:id', validate, deviceIotController.findById);
+router.get('/iot/:id', validate, deviceIotController.findByIdIoT);
 router.get('/:id', deviceIotValidation.findByID(), validate, deviceIotController.findById);
 router.put('/fcm-token/:id', validate, deviceIotController.update);
 router.put('/status', deviceIotValidation.ubahStatus(), validate, deviceIotController.ubahStatus);

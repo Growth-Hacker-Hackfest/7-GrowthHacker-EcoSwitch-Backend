@@ -85,9 +85,6 @@ library.findAllIoT = async (params, transaction = null) => {
   return await IoT.findAll({
     where,
     transaction,
-    order: [
-      ['created_at', 'DESC']
-    ]
   })
 }
 

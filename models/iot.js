@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       primaryKey: true,
       allowNull: false,
+      defaultValue: DataTypes.UUIDV4,
     },
     device_id: {
       type: DataTypes.STRING,
@@ -15,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
     },
   }, {
     tableName: 'iot',
-    timestamps: false,
     freezeTableName: true,
     createdAt: false,
     updatedAt: false,
