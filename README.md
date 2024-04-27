@@ -523,6 +523,96 @@ Status Code: `200 OK`
 }
 ```
 
+#### Create IOT
+
+```http
+POST {{BASE_URL}}/device-iot/iot
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "device_id" : "device_id_ini",
+  "fcm_token" : "fcm_token_ini"
+}
+```
+
+Response after successfully create IOT.
+```json
+{
+  "message": "IoT created",
+  "data": {
+    "id": "61ec2cc2-7637-423b-a3f8-0c0bfdef1279",
+    "device_id": "device_id_ini",
+    "fcm_token": "fcm_token_ini"
+  }
+}
+```
+
+#### Update FCM token
+
+```http
+PUT {{BASE_URL}}/device-iot/fcm-token/61ec2cc2-7637-423b-a3f8-0c0bfdef1279
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "fcm_token" : "fcm_token_ini_2"
+}
+```
+
+Response after successfully update FCM token.
+```json
+{
+  "message": "Device updated",
+  "data": [
+    1
+  ]
+}
+```
+
+#### Get IoT all
+
+```http
+GET {{BASE_URL}}/device-iot/iot
+Authorization: Bearer {{TOKEN}}
+```
+
+Response after successfully get IoT by Device ID.
+```json
+{
+  "message": "IoT retrieved",
+  "data": [
+    {
+      "id": "61ec2cc2-7637-423b-a3f8-0c0bfdef1279",
+      "device_id": "device_id_ini",
+      "fcm_token": "fcm_token_ini_2"
+    }
+  ]
+}
+```
+
+#### Get IoT by ID
+
+```http
+### Get IoT Data By Id
+GET {{BASE_URL}}/device-iot/iot/61ec2cc2-7637-423b-a3f8-0c0bfdef1279
+Authorization: Bearer {{ TOKEN }}
+```
+
+Response after successfully get IoT by ID.
+```json
+{
+  "message": "IoT retrieved",
+  "data": {
+    "id": "61ec2cc2-7637-423b-a3f8-0c0bfdef1279",
+    "device_id": "device_id_ini",
+    "fcm_token": "fcm_token_ini_2"
+  }
+}
+```
+
+
+
 ### Chat Bot
 
 This chat bot API is used to chat with bot.

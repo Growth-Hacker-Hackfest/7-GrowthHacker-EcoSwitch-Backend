@@ -31,3 +31,34 @@ PUT {{BASE_URL}}/device-iot/status?id=contoh_id&status=false
 Authorization: Bearer {{TOKEN}}
 Accept: application/json
 
+
+### Create IoT Data
+POST {{BASE_URL}}/device-iot/iot
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "device_id" : "device_id_ini",
+  "fcm_token" : "fcm_token_ini"
+}
+
+### Update IoT Data fcm_token
+
+PUT {{BASE_URL}}/device-iot/fcm-token/61ec2cc2-7637-423b-a3f8-0c0bfdef1279
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "fcm_token" : "fcm_token_ini_2"
+}
+
+
+### Get All IoT Data
+GET {{BASE_URL}}/device-iot/iot
+Authorization: Bearer {{ TOKEN }}
+
+
+### Get IoT Data By Id
+GET {{BASE_URL}}/device-iot/iot/61ec2cc2-7637-423b-a3f8-0c0bfdef1279
+Authorization: Bearer {{ TOKEN }}
+
