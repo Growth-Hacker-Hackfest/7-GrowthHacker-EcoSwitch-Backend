@@ -1,5 +1,6 @@
 const {
-  DeviceIoT
+  DeviceIoT,
+  LogIots,
 } = require('../models');
 
 const library = {}
@@ -33,4 +34,34 @@ library.findById = async (id, transaction = null) => {
   return await DeviceIoT.findByPk(id, {
     transaction
   })
+}
+
+library.ubahStatus = async (id, status, transaction = null) => {
+  const data = await DeviceIoT.update({
+    is_on: status
+  }, {
+    where: {
+      id
+    },
+    transaction
+  })
+
+  let statusLog = 'mati'
+
+  if (status){
+    statusLog = 'nyala'
+  } else {
+    statusLog = 'mati'
+  }
+
+  const log = await LogIots.create({
+    device_id: id,
+    status: statusLog,
+    transaction
+  })
+
+  return {
+    ...data,
+    log,
+  }
 }

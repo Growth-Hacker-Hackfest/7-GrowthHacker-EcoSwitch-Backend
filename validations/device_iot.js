@@ -1,4 +1,4 @@
-const { body, header, param } = require('express-validator');
+const { body, header, param, query } = require('express-validator');
 
 const library = {}
 module.exports = library
@@ -17,3 +17,8 @@ library.findByID = () => [
 ]
 
 library.findAll = () => []
+
+library.ubahStatus = () => [
+  query('id').isString().notEmpty().withMessage('ID harus merupakan string dan tidak boleh kosong'),
+  query('status').exists().isBoolean().toBoolean().withMessage('Status harus merupakan boolean'),
+]

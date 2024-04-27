@@ -1,5 +1,6 @@
 const deviceIOTRepo = require('../repositories/device_iot');
 const { success } = require('../utils/http_res');
+const transactionUtil = require('../utils/transaction');
 
 const library = {}
 module.exports = library
@@ -33,6 +34,20 @@ library.findById = async (req, res, next) => {
     const device = await deviceIOTRepo.findById(req.params.id)
     return success(res, 200, device, 'Device retrieved')
   } catch (error) {
+    next(error)
+  }
+}
+
+library.ubahStatus = async (req, res, next) => {
+  let transaction;
+  try {
+    transaction = await transactionUtil.Create()
+    const { id, status } = req.query;
+    const result = await deviceIOTRepo.ubahStatus(id, status, transaction.data)
+    await transactionUtil.Commit(transaction.data)
+    return success(res, 200, result, 'Device status updated')
+  } catch (error) {
+    if (transaction) await transactionUtil.Rollback(transaction.data)
     next(error)
   }
 }

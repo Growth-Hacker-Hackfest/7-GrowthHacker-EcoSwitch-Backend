@@ -7,6 +7,7 @@ const deviceIotValidation = require('../validations/device_iot');
 router.get('/', deviceIotValidation.findAll(), validate, deviceIotController.findAll);
 router.post('/', deviceIotValidation.create(), validate, deviceIotController.create);
 router.get('/:id', deviceIotValidation.findByID(), validate, deviceIotController.findById);
+router.put('/status', deviceIotValidation.ubahStatus(), validate, deviceIotController.ubahStatus);
 
 const routeProps = {
   route: router,
