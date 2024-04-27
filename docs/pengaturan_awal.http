@@ -27,3 +27,9 @@ Content-Type: application/json
   ]
 }
 
+### Check is completed
+GET {{BASE_URL}}/informasi-listrik/check-is-complete
+Authorization: Bearer {{TOKEN}}
+Accept: application/json
+
+

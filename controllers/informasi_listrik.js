@@ -26,3 +26,12 @@ library.create = async (req, res, next) => {
     next(error)
   }
 }
+
+library.checkIsComplete = async (req, res, next) => {
+  try {
+    const isComplete = await informasiListrikRepo.checkIsComplete(req.user.id)
+    return success(res, 200, { is_complete: isComplete }, 'Check is complete')
+  } catch (error) {
+    next(error)
+  }
+}

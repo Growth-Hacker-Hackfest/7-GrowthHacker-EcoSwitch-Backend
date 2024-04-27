@@ -43,3 +43,29 @@ library.create = async ({
   }
 }
 
+
+library.checkIsComplete = async (user_id, transaction = null) => {
+  const informasiListrik = await InformasiListrik.findOne({
+    where: {
+      user_id
+    },
+    transaction
+  })
+
+  if (!informasiListrik) {
+    return false
+  }
+
+  const perangkatListrik = await PerangkatListrik.findAll({
+    where: {
+      user_id
+    },
+    transaction
+  })
+
+  if (perangkatListrik.length === 0) {
+    return false
+  }
+
+  return true
+}

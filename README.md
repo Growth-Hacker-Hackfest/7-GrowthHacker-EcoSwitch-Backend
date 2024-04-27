@@ -332,3 +332,27 @@ Status Code: `201 Created`
 }
 ```
 
+#### Check is complete
+
+Request body
+
+```http
+GET {{BASE_URL}}/informasi-listrik/check-is-complete
+Authorization: Bearer {{TOKEN}}
+Accept: application/json
+```
+
+Example Response
+
+Status Code: `200 OK`
+
+```json
+{
+  "message": "Check is complete",
+  "data": {
+    "is_complete": true
+  }
+}
+```
+
+
