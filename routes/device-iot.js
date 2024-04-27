@@ -5,9 +5,14 @@ const deviceIotController = require('../controllers/device_iot');
 const deviceIotValidation = require('../validations/device_iot');
 
 router.get('/', deviceIotValidation.findAll(), validate, deviceIotController.findAll);
+router.get('/iot', validate, deviceIotController.findAllIoT);
 router.post('/', deviceIotValidation.create(), validate, deviceIotController.create);
+router.post('/iot', validate, deviceIotController.createIoT);
+router.get('/iot/:id', validate, deviceIotController.findById);
 router.get('/:id', deviceIotValidation.findByID(), validate, deviceIotController.findById);
+router.put('/fcm-token/:id', validate, deviceIotController.update);
 router.put('/status', deviceIotValidation.ubahStatus(), validate, deviceIotController.ubahStatus);
+
 
 const routeProps = {
   route: router,

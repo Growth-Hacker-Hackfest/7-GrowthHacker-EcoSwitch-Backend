@@ -51,3 +51,50 @@ library.ubahStatus = async (req, res, next) => {
     next(error)
   }
 }
+
+library.createIoT = async (req, res, next) => {
+  let transaction;
+  try {
+    transaction = await transactionUtil.Create()
+    const result = await deviceIOTRepo.createIoT({
+      body: req.body,
+      transaction: transaction.data
+    })
+    await transactionUtil.Commit(transaction.data)
+    return success(res, 201, result, 'IoT created')
+  } catch (error) {
+    if (transaction) await transactionUtil.Rollback(transaction.data)
+    next(error)
+  }
+}
+
+library.update = async (req, res, next) => {
+  let transaction;
+  try {
+    transaction = await transactionUtil.Create()
+    const result = await deviceIOTRepo.updateFCMToken(req.params.id, req.body.fcm_token, transaction.data)
+    await transactionUtil.Commit(transaction.data)
+    return success(res, 200, result, 'Device updated')
+  } catch (error) {
+    if (transaction) await transactionUtil.Rollback(transaction.data)
+    next(error)
+  }
+}
+
+library.findAllIoT = async (req, res, next) => {
+  try {
+    const devices = await deviceIOTRepo.findAllIoT(req.query)
+    return success(res, 200, devices, 'IoT retrieved')
+  } catch (error) {
+    next(error)
+  }
+}
+
+library.findByIdIoT = async (req, res, next) => {
+  try {
+    const device = await deviceIOTRepo.findByIdIoT(req.params.id)
+    return success(res, 200, device, 'IoT retrieved')
+  } catch (error) {
+    next(error)
+  }
+}

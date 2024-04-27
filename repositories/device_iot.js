@@ -1,6 +1,7 @@
 const {
   DeviceIoT,
   LogIots,
+  IoT,
 } = require('../models');
 
 const library = {}
@@ -64,4 +65,45 @@ library.ubahStatus = async (id, status, transaction = null) => {
     ...data,
     log,
   }
+}
+
+library.createIoT = async ({
+  body = {},
+  transaction = null
+}) => {
+  const deviceIoTCreated = await IoT.create(body, {
+    transaction
+  })
+  return deviceIoTCreated
+}
+
+library.findAllIoT = async (params, transaction = null) => {
+  const where = {}
+  if (params.user_id) {
+    where.user_id = params.user_id
+  }
+  return await IoT.findAll({
+    where,
+    transaction,
+    order: [
+      ['created_at', 'DESC']
+    ]
+  })
+}
+
+library.findByIdIoT = async (id, transaction = null) => {
+  return await IoT.findByPk(id, {
+    transaction
+  })
+}
+
+library.updateFCMToken = async (id, fcm_token, transaction = null) => {
+  return await IoT.update({
+    fcm_token
+  }, {
+    where: {
+      id
+    },
+    transaction
+  })
 }
