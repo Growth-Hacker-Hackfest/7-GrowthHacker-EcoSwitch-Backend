@@ -1,0 +1,28 @@
+@BASE_URL=http://localhost:3000
+@TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA1MmFmYjYxLWUyMTktNGRkOS05YTlhLTFmMWQ3YTEyNDg1ZSIsImlhdCI6MTcxNDE3NDU2OCwiZXhwIjoxNzE0MjYwOTY4fQ.9u5TLo9dKpyJRZuTjHA4etzcf4DOjbXY1DrCyaW-2D4
+
+### Create Device IoT
+POST {{BASE_URL}}/device-iot
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "id": "contoh_id_an_1",
+  "name": "contoh_nama",
+  "jenis_perangkat": "contoh_jenis_perangkat",
+  "daya_listrik": 100,
+  "ruangan": "contoh_ruangan",
+  "mode": "contoh_mode",
+  "config": {
+    "contoh_config": "contoh_config"
+  }
+}
+
+### Get All Device IoT
+GET {{BASE_URL}}/device-iot
+Authorization: Bearer {{TOKEN}}
+
+### Get Device IoT By Id
+GET {{BASE_URL}}/device-iot/contoh_id_an
+Authorization: Bearer {{TOKEN}}
+

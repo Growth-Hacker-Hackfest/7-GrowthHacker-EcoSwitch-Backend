@@ -1,4 +1,4 @@
-@BASE_URL=http://localhost:3000
+@BASE_URL=http://hackfest-2024.adityaariizkyy.my.id
 
 ### Create a new user
 POST {{BASE_URL}}/auth/register

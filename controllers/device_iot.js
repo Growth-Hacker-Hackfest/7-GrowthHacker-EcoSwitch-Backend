@@ -18,6 +18,7 @@ library.findAll = async (req, res, next) => {
 
 library.create = async (req, res, next) => {
   try {
+    req.body.user_id = req.user.id
     const device = await deviceIOTRepo.create({
       body: req.body
     })

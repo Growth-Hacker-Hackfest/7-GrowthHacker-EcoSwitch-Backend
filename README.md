@@ -355,4 +355,97 @@ Status Code: `200 OK`
 }
 ```
 
+### Device IOT
+
+#### Create Device IOT
+
+Request body to create device IOT.
+```http
+POST {{BASE_URL}}/device-iot
+Authorization: Bearer {{TOKEN}}
+Content-Type: application/json
+
+{
+  "id": "contoh_id_an",
+  "name": "contoh_nama",
+  "jenis_perangkat": "contoh_jenis_perangkat",
+  "daya_listrik": 100,
+  "ruangan": "contoh_ruangan",
+  "mode": "contoh_mode",
+  "config": {
+    "contoh_config": "contoh_config"
+  }
+}
+```
+
+response
+
+Status Code: `201 Created`
+```json
+{
+  "message": "Device created",
+  "data": {
+    "created_at": "2024-04-27T04:02:45.036Z",
+    "updated_at": "2024-04-27T04:02:45.037Z",
+    "id": "contoh_id_an_1",
+    "name": "contoh_nama",
+    "jenis_perangkat": "contoh_jenis_perangkat",
+    "daya_listrik": 100,
+    "ruangan": "contoh_ruangan",
+    "mode": "contoh_mode",
+    "config": {
+      "contoh_config": "contoh_config"
+    },
+    "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e"
+  }
+}
+```
+
+#### Get All Device IOT
+
+Request to get all device IOT.
+```http
+### Get All Device IoT
+GET {{BASE_URL}}/device-iot
+Authorization: Bearer {{TOKEN}}
+```
+
+Response after successfully get all device IOT.
+
+Status Code: `200 OK`
+```json
+{
+}
+```
+
+#### Get Device IOT by ID
+
+Request to get device IOT by ID.
+```http
+### Get Device IoT by ID
+GET {{BASE_URL}}/device-iot/{{device_id}}
+Authorization: Bearer {{TOKEN}}
+```
+
+Response after successfully get device IOT by ID.
+
+Status Code: `200 OK`
+```json
+{
+  "message": "Device retrieved",
+  "data": {
+    "id": "contoh_id_an",
+    "name": "contoh_nama",
+    "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
+    "jenis_perangkat": "contoh_jenis_perangkat",
+    "daya_listrik": 100,
+    "ruangan": "contoh_ruangan",
+    "mode": "contoh_mode",
+    "config": "{\"contoh_config\":\"contoh_config\"}",
+    "created_at": "2024-04-27T03:38:45.000Z",
+    "updated_at": "2024-04-27T03:38:45.000Z",
+    "deleted_at": null
+  }
+}
+```
 
