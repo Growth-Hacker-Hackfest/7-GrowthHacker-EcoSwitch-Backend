@@ -416,6 +416,51 @@ Response after successfully get all device IOT.
 Status Code: `200 OK`
 ```json
 {
+  "message": "Devices retrieved",
+  "data": [
+    {
+      "id": "contoh_id_an_1",
+      "name": "contoh_nama",
+      "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
+      "jenis_perangkat": "contoh_jenis_perangkat",
+      "is_on": true,
+      "daya_listrik": 100,
+      "ruangan": "contoh_ruangan",
+      "mode": "contoh_mode",
+      "config": "{\"contoh_config\":\"contoh_config\"}",
+      "created_at": "2024-04-27T04:02:45.000Z",
+      "updated_at": "2024-04-27T04:02:45.000Z",
+      "deleted_at": null
+    },
+    {
+      "id": "contoh_id_an",
+      "name": "contoh_nama",
+      "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
+      "jenis_perangkat": "contoh_jenis_perangkat",
+      "is_on": true,
+      "daya_listrik": 100,
+      "ruangan": "contoh_ruangan",
+      "mode": "contoh_mode",
+      "config": "{\"contoh_config\":\"contoh_config\"}",
+      "created_at": "2024-04-27T03:38:45.000Z",
+      "updated_at": "2024-04-27T03:38:45.000Z",
+      "deleted_at": null
+    },
+    {
+      "id": "contoh_id",
+      "name": "contoh_nama",
+      "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
+      "jenis_perangkat": "contoh_jenis_perangkat",
+      "is_on": false,
+      "daya_listrik": 100,
+      "ruangan": "contoh_ruangan",
+      "mode": "contoh_mode",
+      "config": null,
+      "created_at": "2024-04-27T03:38:21.000Z",
+      "updated_at": "2024-04-27T17:06:41.000Z",
+      "deleted_at": null
+    }
+  ]
 }
 ```
 
@@ -446,6 +491,34 @@ Status Code: `200 OK`
     "created_at": "2024-04-27T03:38:45.000Z",
     "updated_at": "2024-04-27T03:38:45.000Z",
     "deleted_at": null
+  }
+}
+```
+
+#### Update Status Device IOT
+
+Request to update status device IOT.
+```http
+### Update Status Device IoT
+PUT {{BASE_URL}}/device-iot/status?id=contoh_id&status=false
+Authorization: Bearer {{TOKEN}}
+Accept: application/json
+```
+
+Response after successfully update status device IOT.
+
+Status Code: `200 OK`
+```json
+{
+  "message": "Device status updated",
+  "data": {
+    "0": 1,
+    "log": {
+      "created_at": "2024-04-27T17:06:41.328Z",
+      "id": "5cc141d5-ad01-4079-aafd-dbd4e38744d5",
+      "device_id": "contoh_id",
+      "status": "mati"
+    }
   }
 }
 ```

@@ -26,3 +26,8 @@ Authorization: Bearer {{TOKEN}}
 GET {{BASE_URL}}/device-iot/contoh_id_an
 Authorization: Bearer {{TOKEN}}
 
+### Update Status Device IoT
+PUT {{BASE_URL}}/device-iot/status?id=contoh_id&status=false
+Authorization: Bearer {{TOKEN}}
+Accept: application/json
+
