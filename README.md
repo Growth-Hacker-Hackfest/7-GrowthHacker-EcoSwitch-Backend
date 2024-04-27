@@ -13,6 +13,7 @@ Lorem ipsum
 2. [Banner API](#banner-api)
 3. [Ruangan](#ruangan)
 4. [Pengaturan Awal](#pengaturan-awal)
+5. [Chat Bot](#chat-bot)
 
 ### Base Environment
 
@@ -448,4 +449,75 @@ Status Code: `200 OK`
   }
 }
 ```
+
+### Chat Bot
+
+This chat bot API is used to chat with bot.
+
+#### Create Chat Bot
+
+Request to get all chat bot.
+```http
+POST {{BASE_URL}}/chat
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+{
+  "prompt": "Bagaimana cara menghemat listrik?"
+}
+```
+
+Response after successfully get all chat bot.
+
+Status Code: `200 OK`
+```json
+{
+  "message": "Chat retrieved",
+  "data": "Menggunakan lampu hemat energi, mematikan perangkat elektronik saat tidak digunakan, dan menggunakan perangkat hemat energi lainnya."
+}
+}
+```
+
+
+#### Get All Chat Bot
+
+Request to get all chat bot.
+```http
+GET {{BASE_URL}}/chat
+Authorization: Bearer {{TOKEN}}
+```
+
+Response after successfully get all chat bot.
+
+Status Code: `200 OK`
+```json
+{
+  "message": "Chat retrieved",
+  "data": [
+    {
+      "id": "14631b7c-0370-4c9a-8283-00e709444b74",
+      "cluster_id": "37a0805f-48b5-4bc3-802d-e5d64f1dc2b1",
+      "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
+      "message": "🔍 Pertanyaan Klarifikasi: Apakah Anda memiliki pertanyaan terkait manajemen listrik atau EcoSwitch?\n\nSebagai asisten EcoSwitch, fokus kami adalah pada topik tentang penghematan listrik dan manajemen energi. Jika Anda memiliki pertanyaan terkait topik tersebut, saya akan dengan senang hati membantu Anda. Jika tidak, mungkin saya bisa membantu mengarahkan Anda ke sumber informasi yang tepat tentang pertanyaan Anda terkait kota Paris.",
+      "role": "assistant",
+      "created_at": "2024-04-27T08:41:10.000Z",
+      "updated_at": "2024-04-27T08:41:10.000Z",
+      "createdAt": "2024-04-27T08:41:10.000Z",
+      "updatedAt": "2024-04-27T08:41:10.000Z"
+    },
+    {
+      "id": "eb0ab0cf-55c0-4920-a9c5-4192441164d0",
+      "cluster_id": "97c26f0c-c918-469c-ba13-72fcfad1fe8c",
+      "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
+      "message": "What is the capital of France?",
+      "role": "user",
+      "created_at": "2024-04-27T08:41:10.000Z",
+      "updated_at": "2024-04-27T08:41:10.000Z",
+      "createdAt": "2024-04-27T08:41:10.000Z",
+      "updatedAt": "2024-04-27T08:41:10.000Z"
+    }
+  ]
+}
+```
+
 
