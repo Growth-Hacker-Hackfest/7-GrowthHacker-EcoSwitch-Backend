@@ -298,37 +298,41 @@ Status Code: `201 Created`
   "message": "Informasi listrik created",
   "data": {
     "informasiListrik": {
-      "id": "0daa6f2e-4c31-4a9c-8f70-f316617549d3",
-      "daya": "contoh_daya",
+      "id": "5248848a-be8d-4ef3-ac82-7ed8b397bd5b",
+      "daya": "900",
       "jenis_pembayaran": "contoh_jenis_pembayaran",
-      "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
-      "updated_at": "2024-04-26T23:38:14.804Z",
-      "created_at": "2024-04-26T23:38:14.804Z"
+      "user_id": "98e83ff5-1881-4a4e-bc90-0a2cacd74c5e",
+      "updated_at": "2024-04-28T00:05:37.629Z",
+      "created_at": "2024-04-28T00:05:37.629Z"
     },
     "perangkatListrik": [
       {
-        "id": "e6020a03-66e3-483c-9923-d206ad34f836",
-        "jenis_perangkat": "contoh_jenis_perangkat_1",
-        "jenis_inverter": "contoh_jenis_inverter_1",
-        "jumlah": 2,
-        "daya_listrik": 100,
-        "lama_pemakaian": 5,
-        "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
-        "created_at": "2024-04-26T23:38:14.816Z",
-        "updated_at": "2024-04-26T23:38:14.816Z"
+        "id": "bc503854-c1df-40ce-9b1d-4b275fee6d7a",
+        "jenis_perangkat": "AC Inverter",
+        "jumlah": 5,
+        "daya_listrik": 500,
+        "lama_pemakaian": 9,
+        "user_id": "98e83ff5-1881-4a4e-bc90-0a2cacd74c5e",
+        "created_at": "2024-04-28T00:05:37.841Z",
+        "updated_at": "2024-04-28T00:05:37.841Z"
       },
       {
-        "id": "80c6563e-1ce6-4af9-9b68-2f517ed58665",
-        "jenis_perangkat": "contoh_jenis_perangkat_2",
-        "jenis_inverter": "contoh_jenis_inverter_2",
-        "jumlah": 3,
-        "daya_listrik": 200,
-        "lama_pemakaian": 6,
-        "user_id": "052afb61-e219-4dd9-9a9a-1f1d7a12485e",
-        "created_at": "2024-04-26T23:38:14.816Z",
-        "updated_at": "2024-04-26T23:38:14.816Z"
+        "id": "84c7e50a-337b-47e5-b7ba-304657691663",
+        "jenis_perangkat": "Lampu LED",
+        "jumlah": 10,
+        "daya_listrik": 20,
+        "lama_pemakaian": 10,
+        "user_id": "98e83ff5-1881-4a4e-bc90-0a2cacd74c5e",
+        "created_at": "2024-04-28T00:05:37.841Z",
+        "updated_at": "2024-04-28T00:05:37.841Z"
       }
-    ]
+    ],
+    "response_ai": {
+      "total_kwh": "Total daya listrik yang kamu gunakan dalam sebulan adalah 4.050 kWh",
+      "biaya": "Estimasi biaya listrik bulanan kamu saat ini adalah sekitar Rp 5.475.600 per bulan",
+      "co2": "Estimasi emisi CO2 yang dihasilkan oleh perangkat listrik kamu adalah sekitar 5.785 kgCO2 per bulan",
+      "informasi_listrik_id": "5248848a-be8d-4ef3-ac82-7ed8b397bd5b"
+    }
   }
 }
 ```
