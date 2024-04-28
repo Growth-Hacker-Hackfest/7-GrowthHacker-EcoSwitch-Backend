@@ -11,7 +11,7 @@ Content-Type: application/json
   "jenis_pembayaran": "contoh_jenis_pembayaran",
   "perangkat_listrik": [
     {
-      "jenis_perangkat": "AC Inverter",
+      "jenis_perangkat": "AC Non-Inverter",
       "jumlah": 5,
       "daya_listrik": 500,
       "lama_pemakaian": 9
