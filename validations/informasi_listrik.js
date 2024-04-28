@@ -17,9 +17,6 @@ library.create = () => {
     body('perangkat_listrik.*.jenis_perangkat')
       .exists().withMessage('jenis_perangkat is required')
       .isString().withMessage('jenis_perangkat must be a string'),
-    body('perangkat_listrik.*.jenis_inverter')
-      .exists().withMessage('jenis_inverter is required')
-      .isString().withMessage('jenis_inverter must be a string'),
     body('perangkat_listrik.*.jumlah')
       .exists().withMessage("jumlah perangkat listrik is required")
       .isInt().withMessage("jumlah perangkat listrik must be an integer"),
